@@ -21,6 +21,8 @@ proc load_design {design_file sdc_file} {
     }
     read_verilog $::env(RESULTS_DIR)/$design_file
     link_design $::env(DESIGN_NAME)
+    puts "@@write_def after link"
+    write_def $::env(RESULTS_DIR)/$::env(DESIGN_NAME).def
   } elseif {$ext == ".odb"} {
     read_db $::env(RESULTS_DIR)/$design_file
   } else {
