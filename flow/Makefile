@@ -251,8 +251,10 @@ endif
 # Priority is given to
 #       1 user explicit set with variable in Makefile or command line, for instance setting OPENROAD_EXE
 #       2 ORFS compiled tools: openroad, yosys
-export OPENROAD_EXE = /usr/local/bin/openroad
-export OPENSTA_EXE = /home/joy/prj/OpenROAD/src/sta/app/sta
+#export OPENROAD_EXE = /usr/local/bin/openroad
+#export OPENSTA_EXE = /home/joy/prj/OpenROAD/src/sta/app/sta
+export OPENROAD_EXE = $(which openroad) 
+export OPENSTA_EXE = $(which sta)
 export OPENROAD_EXE      ?= $(abspath $(FLOW_HOME)/../tools/install/OpenROAD/bin/openroad)
 export OPENSTA_EXE       ?= $(abspath $(FLOW_HOME)/../tools/install/OpenROAD/bin/sta)
 

@@ -246,9 +246,9 @@ __local_build()
         echo "[INFO FLW-0017] Compiling Yosys."
         ${NICE} make install -C tools/yosys -j "${PROC}" ${YOSYS_ARGS}
 
-        echo "[INFO FLW-0018] Compiling OpenROAD."
-        eval ${NICE} ./tools/OpenROAD/etc/Build.sh -dir="$DIR/tools/OpenROAD/build" -threads=${PROC} -cmake=\'${OPENROAD_APP_ARGS}\'
-        ${NICE} cmake --build tools/OpenROAD/build --target install -j "${PROC}"
+        echo "[INFO FLW-0018] Compiling OpenROAD. [SKIP]"
+        #eval ${NICE} ./tools/OpenROAD/etc/Build.sh -dir="$DIR/tools/OpenROAD/build" -threads=${PROC} -cmake=\'${OPENROAD_APP_ARGS}\'
+        #${NICE} cmake --build tools/OpenROAD/build --target install -j "${PROC}"
 }
 
 __update_openroad_app_remote()
